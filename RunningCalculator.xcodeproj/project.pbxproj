@@ -21,6 +21,8 @@
 		1A44E3432853F1FD003692B6 /* DistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44E3422853F1FD003692B6 /* DistanceView.swift */; };
 		1A44E3452853F207003692B6 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44E3442853F207003692B6 /* TimeView.swift */; };
 		1A44E3472853F8FD003692B6 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44E3462853F8FD003692B6 /* DoubleExtension.swift */; };
+		1A44E34A2855469F003692B6 /* DistanceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44E3492855469F003692B6 /* DistanceInput.swift */; };
+		1A44E34C285549D7003692B6 /* TimeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44E34B285549D7003692B6 /* TimeInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		1A44E3422853F1FD003692B6 /* DistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceView.swift; sourceTree = "<group>"; };
 		1A44E3442853F207003692B6 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		1A44E3462853F8FD003692B6 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		1A44E3492855469F003692B6 /* DistanceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceInput.swift; sourceTree = "<group>"; };
+		1A44E34B285549D7003692B6 /* TimeInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +157,9 @@
 			children = (
 				1A44E3232853EBAC003692B6 /* ContentView.swift */,
 				1A44E33F2853EE12003692B6 /* PaceView.swift */,
+				1A44E3492855469F003692B6 /* DistanceInput.swift */,
 				1A44E3422853F1FD003692B6 /* DistanceView.swift */,
+				1A44E34B285549D7003692B6 /* TimeInput.swift */,
 				1A44E3442853F207003692B6 /* TimeView.swift */,
 			);
 			path = Views;
@@ -297,10 +303,12 @@
 				1A44E3262853EBAC003692B6 /* NotificationController.swift in Sources */,
 				1A44E3242853EBAC003692B6 /* ContentView.swift in Sources */,
 				1A44E3432853F1FD003692B6 /* DistanceView.swift in Sources */,
+				1A44E34C285549D7003692B6 /* TimeInput.swift in Sources */,
 				1A44E3472853F8FD003692B6 /* DoubleExtension.swift in Sources */,
 				1A44E3452853F207003692B6 /* TimeView.swift in Sources */,
 				1A44E32A2853EBAC003692B6 /* ComplicationController.swift in Sources */,
 				1A44E3222853EBAC003692B6 /* RunningCalculatorApp.swift in Sources */,
+				1A44E34A2855469F003692B6 /* DistanceInput.swift in Sources */,
 				1A44E3282853EBAC003692B6 /* NotificationView.swift in Sources */,
 				1A44E3402853EE12003692B6 /* PaceView.swift in Sources */,
 			);
@@ -378,6 +386,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -431,6 +440,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
