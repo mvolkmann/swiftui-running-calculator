@@ -4,8 +4,9 @@ struct TimeView: View {
     @EnvironmentObject var viewModel: ViewModel
 
     private var time: String {
-        let miles = Distance(key: viewModel.distanceKey).miles
-        let totalSeconds = Int((miles * Double(viewModel.paceSeconds)).rounded())
+        let d = Distance(key: viewModel.distanceKey)
+        let distance = viewModel.paceUnit == "km" ? d.kilometers : d.miles
+        let totalSeconds = Int((distance * Double(viewModel.paceSeconds)).rounded())
         return Time(totalSeconds: totalSeconds, includeHours: true).string
     }
 
@@ -14,7 +15,7 @@ struct TimeView: View {
             DistanceInput(distanceKey: $viewModel.distanceKey)
             Divider()
             TimeInput(
-                label: "Pace",
+                label: "Pace (min/\(viewModel.paceUnit))",
                 totalSeconds: $viewModel.paceSeconds
             )
             Divider()

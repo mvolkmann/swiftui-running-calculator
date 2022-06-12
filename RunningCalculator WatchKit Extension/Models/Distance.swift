@@ -15,5 +15,6 @@ struct Distance {
     // These are in the order in which they should appear in a Picker.
     static let keys = ["1 Mile", "5K", "10K", "Half Marathon", "Marathon", "Custom"]
 
+    var kilometers: Double { miles * 1.60934 }
     var miles: Double { Distance.map[key] ?? 0 }
 }

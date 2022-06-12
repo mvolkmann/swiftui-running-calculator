@@ -4,9 +4,10 @@ struct PaceView: View {
     @EnvironmentObject var viewModel: ViewModel
 
     private var pace: String {
-        let miles = Distance(key: viewModel.distanceKey).miles
-        if miles == 0 { return "unknown" }
-        let pace = Int((Double(viewModel.totalSeconds) / miles).rounded())
+        let d = Distance(key: viewModel.distanceKey)
+        let distance = viewModel.paceUnit == "km" ? d.kilometers : d.miles
+        if distance == 0 { return "unknown" }
+        let pace = Int((Double(viewModel.totalSeconds) / distance).rounded())
         return Time(totalSeconds: pace).string
     }
 
@@ -20,7 +21,7 @@ struct PaceView: View {
                 totalSeconds: $viewModel.totalSeconds
             )
             Divider()
-            Label("Pace is \(pace) per mile.", bold: true)
+            Label("Pace is \(pace) per \(viewModel.paceUnit).", bold: true)
                 .foregroundColor(.yellow)
         }
     }

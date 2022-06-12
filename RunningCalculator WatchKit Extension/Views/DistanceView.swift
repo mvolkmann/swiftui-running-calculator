@@ -18,11 +18,14 @@ struct DistanceView: View {
             )
             Divider()
             TimeInput(
-                label: "Pace",
+                label: "Pace (min/\(viewModel.paceUnit))",
                 totalSeconds: $viewModel.paceSeconds
             )
             Divider()
-            Label("Distance is \(distance.places(2)) miles.", bold: true)
+            Label(
+                "Distance is \(distance.places(2)) \(viewModel.paceUnit)s.",
+                bold: true
+            )
                 .foregroundColor(.yellow)
         }
     }

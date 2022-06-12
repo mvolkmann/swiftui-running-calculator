@@ -170,11 +170,11 @@
 				1A44E3232853EBAC003692B6 /* ContentView.swift */,
 				1A44E3492855469F003692B6 /* DistanceInput.swift */,
 				1A44E3422853F1FD003692B6 /* DistanceView.swift */,
-				1A44E35228563B3F003692B6 /* SettingsView.swift */,
+				1A44E3572856472D003692B6 /* Label.swift */,
 				1A44E33F2853EE12003692B6 /* PaceView.swift */,
+				1A44E35228563B3F003692B6 /* SettingsView.swift */,
 				1A44E34B285549D7003692B6 /* TimeInput.swift */,
 				1A44E3442853F207003692B6 /* TimeView.swift */,
-				1A44E3572856472D003692B6 /* Label.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

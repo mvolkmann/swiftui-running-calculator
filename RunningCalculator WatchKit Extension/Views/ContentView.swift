@@ -4,21 +4,24 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                /*
-                NavigationLink(destination: SettingsView()) {
-                    Text("Settings")
+                HStack {
+                    NavigationLink(destination: SettingsView()) {
+                        Text("Settings").foregroundColor(.gray)
+                    }
+                    NavigationLink(destination: PaceView()) {
+                        Text("Pace").foregroundColor(.red).fontWeight(.bold)
+                    }
                 }
-                */
-                NavigationLink(destination: PaceView()) {
-                    Text("Pace").fontWeight(.bold).foregroundColor(.red)
-                }
-                NavigationLink(destination: TimeView()) {
-                    Text("Time").fontWeight(.bold).foregroundColor(.green)
-                }
-                NavigationLink(destination: DistanceView()) {
-                    Text("Distance").fontWeight(.bold).foregroundColor(.blue)
+                HStack {
+                    NavigationLink(destination: TimeView()) {
+                        Text("Time").foregroundColor(.green).fontWeight(.bold)
+                    }
+                    NavigationLink(destination: DistanceView()) {
+                        Text("Distance").foregroundColor(.blue).fontWeight(.bold)
+                    }
                 }
             }
+            .font(.system(size: 16))
         }
     }
 }
