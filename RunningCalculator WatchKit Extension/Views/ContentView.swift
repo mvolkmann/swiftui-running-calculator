@@ -10,13 +10,13 @@ struct ContentView: View {
                 }
                 */
                 NavigationLink(destination: PaceView()) {
-                    Text("Pace")
+                    Text("Pace").fontWeight(.bold).foregroundColor(.red)
                 }
                 NavigationLink(destination: TimeView()) {
-                    Text("Time")
+                    Text("Time").fontWeight(.bold).foregroundColor(.green)
                 }
                 NavigationLink(destination: DistanceView()) {
-                    Text("Distance")
+                    Text("Distance").fontWeight(.bold).foregroundColor(.blue)
                 }
             }
         }
