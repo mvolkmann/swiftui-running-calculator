@@ -31,7 +31,9 @@ struct TimeInput: View {
     }
 
     var body: some View {
-        if !label.isEmpty { Text(label) }
+        if !label.isEmpty {
+            Text(label).font(.system(size: 16)).fontWeight(.bold)
+        }
         HStack {
             if includeHours {
                 Picker("Hours", selection: $hours) {
