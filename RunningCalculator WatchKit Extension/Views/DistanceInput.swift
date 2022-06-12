@@ -4,10 +4,14 @@ struct DistanceInput: View {
     var distanceKey: Binding<String>
 
     var body: some View {
-        Picker("Distance", selection: distanceKey) {
-            ForEach(Array(Distance.keys), id: \.self) { value in
-                Text(value)
+        VStack {
+            Label("Distance", bold: true)
+            Picker("Distance", selection: distanceKey) {
+                ForEach(Array(Distance.keys), id: \.self) { value in
+                    Text(value)
+                }
             }
+            .labelsHidden()
         }
     }
 }

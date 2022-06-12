@@ -16,12 +16,13 @@ struct DistanceView: View {
                 includeHours: true,
                 totalSeconds: $viewModel.totalSeconds
             )
+            Divider()
             TimeInput(
                 label: "Pace",
                 totalSeconds: $viewModel.paceSeconds
             )
-            Text("Distance is \(distance.places(2)) miles.")
-                .font(.headline)
+            Divider()
+            Label("Distance is \(distance.places(2)) miles.", bold: true)
                 .foregroundColor(.yellow)
         }
     }

@@ -31,33 +31,41 @@ struct TimeInput: View {
     }
 
     var body: some View {
-        if !label.isEmpty {
-            Text(label).font(.system(size: 16)).fontWeight(.bold)
-        }
+        if !label.isEmpty { Label(label, bold: true) }
         HStack {
             if includeHours {
-                Picker("Hours", selection: $hours) {
-                    ForEach(hourValues, id: \.self) { value in
+                VStack {
+                    Label("Hours")
+                    Picker("Hours", selection: $hours) {
+                        ForEach(hourValues, id: \.self) { value in
+                            Text(String(value))
+                        }
+                    }
+                    .onChange(of: hours) { value in updateTotalSeconds() }
+                }
+            }
+
+            VStack {
+                Label("Mins")
+                Picker("Minutes", selection: $minutes) {
+                    ForEach(minuteValues, id: \.self) { value in
                         Text(String(value))
                     }
                 }
-                .onChange(of: hours) { value in updateTotalSeconds() }
+                .onChange(of: minutes) { value in updateTotalSeconds() }
             }
 
-            Picker("Mins", selection: $minutes) {
-                ForEach(minuteValues, id: \.self) { value in
-                    Text(String(value))
+            VStack {
+                Label("Secs")
+                Picker("Seconds", selection: $seconds) {
+                    ForEach(secondValues, id: \.self) { value in
+                        Text(String(value))
+                    }
                 }
+                .onChange(of: seconds) { value in updateTotalSeconds() }
             }
-            .onChange(of: minutes) { value in updateTotalSeconds() }
-
-            Picker("Secs", selection: $seconds) {
-                ForEach(secondValues, id: \.self) { value in
-                    Text(String(value))
-                }
-            }
-            .onChange(of: seconds) { value in updateTotalSeconds() }
         }
+        .labelsHidden() // hides Picker labels
     }
 
     func updateTotalSeconds() {

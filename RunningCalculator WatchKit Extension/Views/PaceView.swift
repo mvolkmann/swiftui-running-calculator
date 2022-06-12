@@ -13,13 +13,14 @@ struct PaceView: View {
     var body: some View {
         VStack {
             DistanceInput(distanceKey: $viewModel.distanceKey)
+            Divider()
             TimeInput(
                 label: "Time",
                 includeHours: true,
                 totalSeconds: $viewModel.totalSeconds
             )
-            Text("Pace is \(pace) per mile.")
-                .font(.headline)
+            Divider()
+            Label("Pace is \(pace) per mile.", bold: true)
                 .foregroundColor(.yellow)
         }
     }

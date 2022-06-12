@@ -12,12 +12,13 @@ struct TimeView: View {
     var body: some View {
         VStack {
             DistanceInput(distanceKey: $viewModel.distanceKey)
+            Divider()
             TimeInput(
                 label: "Pace",
                 totalSeconds: $viewModel.paceSeconds
             )
-            Text("Time is \(time).")
-                .font(.headline)
+            Divider()
+            Label("Time is \(time).", bold: true)
                 .foregroundColor(.yellow)
         }
     }
