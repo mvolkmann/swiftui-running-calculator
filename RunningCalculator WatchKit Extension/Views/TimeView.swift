@@ -1,31 +1,26 @@
 import SwiftUI
 
 struct TimeView: View {
-    @State var distanceKey = "Marathon"
-    @State var time = ""
-    @State var paceSeconds = 0
+    @EnvironmentObject var viewModel: ViewModel
+
+    private var time: String {
+        let miles = Distance(key: viewModel.distanceKey).miles
+        let totalSeconds = Int((miles * Double(viewModel.paceSeconds)).rounded())
+        return Time(totalSeconds: totalSeconds, includeHours: true).string
+    }
 
     var body: some View {
         VStack {
-            DistanceInput(distanceKey: $distanceKey)
+            DistanceInput(distanceKey: $viewModel.distanceKey)
             TimeInput(
                 label: "Pace",
-                totalSeconds: $paceSeconds
+                totalSeconds: $viewModel.paceSeconds
             )
-            if time.isEmpty {
-                Button("Calculate Time", action: calculateTime)
-            } else {
-                Text("Time is \(time)")
-            }
+            Text("Time is \(time).")
+                .font(.headline)
+                .foregroundColor(.yellow)
         }
     }
-
-    func calculateTime() {
-        let miles = distanceMap[distanceKey]!
-        let totalSeconds = Int((miles * Double(paceSeconds)).rounded())
-        time = timeString(for: totalSeconds)
-    }
-
 }
 
 struct TimeView_Previews: PreviewProvider {

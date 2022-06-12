@@ -1,26 +1,27 @@
 import SwiftUI
 
 struct PaceView: View {
-    @State var distanceKey = "Marathon"
-    @State var pace = ""
-    @State var totalSeconds = ((2 * 60) + 57) * 60 + 11 // 0
+    @EnvironmentObject var viewModel: ViewModel
+
+    private var pace: String {
+        let miles = Distance(key: viewModel.distanceKey).miles
+        if miles == 0 { return "unknown" }
+        let pace = Int((Double(viewModel.totalSeconds) / miles).rounded())
+        return Time(totalSeconds: pace).string
+    }
 
     var body: some View {
         VStack {
-            DistanceInput(distanceKey: $distanceKey)
-            TimeInput(includeHours: true, totalSeconds: $totalSeconds)
-            if pace.isEmpty {
-                Button("Calculate Pace", action: calculatePace)
-            } else {
-                Text("Pace is \(pace) per mile")
-            }
+            DistanceInput(distanceKey: $viewModel.distanceKey)
+            TimeInput(
+                label: "Time",
+                includeHours: true,
+                totalSeconds: $viewModel.totalSeconds
+            )
+            Text("Pace is \(pace) per mile.")
+                .font(.headline)
+                .foregroundColor(.yellow)
         }
-    }
-
-    func calculatePace() {
-        let miles = distanceMap[distanceKey]!
-        let secondsPerMile = Int((Double(totalSeconds) / miles).rounded())
-        pace = timeString(for: secondsPerMile)
     }
 }
 

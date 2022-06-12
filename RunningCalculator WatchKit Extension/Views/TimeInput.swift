@@ -1,15 +1,5 @@
 import SwiftUI
 
-func timeString(for totalSeconds: Int) -> String {
-    let seconds = totalSeconds % 60
-    var minutes = floor(Double(totalSeconds) / 60) // a Double
-    let hours = floor(minutes / 60) // a Double
-    print("timeString: hours = \(hours)")
-    let hoursText = hours == 0 ? "" : "\(hours):"
-    //TODO: Left pad minutes and seconds with zero.
-    return "\(hoursText)\(Int(minutes)):\(Int(seconds))"
-}
-
 struct TimeInput: View {
     var label: String
     var includeHours: Bool
@@ -32,12 +22,12 @@ struct TimeInput: View {
         self.includeHours = includeHours
         self.totalSeconds = totalSeconds
 
-        let ts = totalSeconds.wrappedValue
-        _seconds = State(initialValue: ts % 60)
-        let m = ts / 60 // Int division truncates
-        let h = m / 60 // Int division truncates
-        _hours = State(initialValue: h)
-        _minutes = State(initialValue: m % 60)
+        let time = Time(totalSeconds: totalSeconds.wrappedValue)
+
+        // Setting @State properties in init is tricky!
+        _seconds = State(initialValue: time.seconds)
+        _hours = State(initialValue: time.hours)
+        _minutes = State(initialValue: time.minutes)
     }
 
     var body: some View {

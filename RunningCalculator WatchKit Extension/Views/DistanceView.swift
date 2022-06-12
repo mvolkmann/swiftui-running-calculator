@@ -1,31 +1,29 @@
 import SwiftUI
 
 struct DistanceView: View {
-    @State var distance: Double = 0
-    @State var paceSeconds = 0
-    @State var timeSeconds = 0
+    @EnvironmentObject var viewModel: ViewModel
+
+    var distance: Double {
+        viewModel.paceSeconds == 0 ?
+            0 :
+            Double(viewModel.totalSeconds) / Double(viewModel.paceSeconds)
+    }
 
     var body: some View {
         VStack {
             TimeInput(
                 label: "Time",
                 includeHours: true,
-                totalSeconds: $timeSeconds
+                totalSeconds: $viewModel.totalSeconds
             )
             TimeInput(
                 label: "Pace",
-                totalSeconds: $paceSeconds
+                totalSeconds: $viewModel.paceSeconds
             )
-            if distance == 0 {
-                Button("Calculate Distance", action: calculateDistance)
-            } else {
-                Text("Distance is \(distance.places(2)) miles")
-            }
+            Text("Distance is \(distance.places(2)) miles.")
+                .font(.headline)
+                .foregroundColor(.yellow)
         }
-    }
-
-    func calculateDistance() {
-        distance = Double(timeSeconds) / Double(paceSeconds)
     }
 }
 

@@ -4,14 +4,19 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                /*
+                NavigationLink(destination: SettingsView()) {
+                    Text("Settings")
+                }
+                */
                 NavigationLink(destination: PaceView()) {
-                    Text("Calculate Pace")
+                    Text("Pace")
                 }
                 NavigationLink(destination: TimeView()) {
-                    Text("Calculate Time")
+                    Text("Time")
                 }
                 NavigationLink(destination: DistanceView()) {
-                    Text("Calculate Distance")
+                    Text("Distance")
                 }
             }
         }
