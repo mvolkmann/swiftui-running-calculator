@@ -1,22 +1,25 @@
 import SwiftUI
 
 struct TimeView: View {
-    @EnvironmentObject var viewModel: ViewModel
+    @AppStorage("distanceKey") var distanceKey: String = "Marathon"
+    @AppStorage("paceUnit") var paceUnit: String = "miles"
+    @AppStorage("paceSeconds") var paceSeconds: Int = 6 * 60 + 45
+    //@EnvironmentObject var viewModel: ViewModel
 
     private var time: String {
-        let d = Distance(key: viewModel.distanceKey)
-        let distance = viewModel.paceUnit == "km" ? d.kilometers : d.miles
-        let totalSeconds = Int((distance * Double(viewModel.paceSeconds)).rounded())
+        let d = Distance(key: distanceKey)
+        let distance = paceUnit == "km" ? d.kilometers : d.miles
+        let totalSeconds = Int((distance * Double(paceSeconds)).rounded())
         return Time(totalSeconds: totalSeconds, includeHours: true).string
     }
 
     var body: some View {
         VStack {
-            DistanceInput(distanceKey: $viewModel.distanceKey)
+            DistanceInput(distanceKey: $distanceKey)
             Divider()
             TimeInput(
-                label: "Pace (min/\(viewModel.paceUnit))",
-                totalSeconds: $viewModel.paceSeconds
+                label: "Pace (min/\(paceUnit))",
+                totalSeconds: $paceSeconds
             )
             Divider()
             Label("Time is \(time).", bold: true)

@@ -1,12 +1,16 @@
 import SwiftUI
 
 struct DistanceView: View {
-    @EnvironmentObject var viewModel: ViewModel
+    @AppStorage("paceSeconds") var paceSeconds: Int = 6 * 60 + 45
+    @AppStorage("paceUnit") var paceUnit: String = "miles"
+    @AppStorage("totalSeconds") var totalSeconds: Int = (2 * 60 + 57) * 60 + 11
+    //@EnvironmentObject var viewModel: ViewModel
 
     var distance: Double {
-        viewModel.paceSeconds == 0 ?
+        //viewModel.paceSeconds == 0 ?
+        paceSeconds == 0 ?
             0 :
-            Double(viewModel.totalSeconds) / Double(viewModel.paceSeconds)
+            Double(totalSeconds) / Double(paceSeconds)
     }
 
     var body: some View {
@@ -14,16 +18,16 @@ struct DistanceView: View {
             TimeInput(
                 label: "Time",
                 includeHours: true,
-                totalSeconds: $viewModel.totalSeconds
+                totalSeconds: $totalSeconds
             )
             Divider()
             TimeInput(
-                label: "Pace (min/\(viewModel.paceUnit))",
-                totalSeconds: $viewModel.paceSeconds
+                label: "Pace (min/\(paceUnit))",
+                totalSeconds: $paceSeconds
             )
             Divider()
             Label(
-                "Distance is \(distance.places(2)) \(viewModel.paceUnit)s.",
+                "Distance is \(distance.places(2)) \(paceUnit)s.",
                 bold: true
             )
                 .foregroundColor(.yellow)
