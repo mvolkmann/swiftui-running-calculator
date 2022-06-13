@@ -1,5 +1,7 @@
 import SwiftUI
 
+// After all layout changes, verify that the UI
+// looks good in the Series 6 40mm Simulator.
 let pickerHeight: CGFloat = 30
 let topPadding: CGFloat = 20
 
