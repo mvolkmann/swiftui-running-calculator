@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct DistanceView: View {
+    @AppStorage("distanceUnit") var distanceUnit: String = "mile"
     @AppStorage("paceSeconds") var paceSeconds: Int = 6 * 60 + 45
-    @AppStorage("paceUnit") var paceUnit: String = "miles"
     @AppStorage("totalSeconds") var totalSeconds: Int = (2 * 60 + 57) * 60 + 11
     //@EnvironmentObject var viewModel: ViewModel
 
@@ -20,18 +20,17 @@ struct DistanceView: View {
                 includeHours: true,
                 totalSeconds: $totalSeconds
             )
-            Divider()
             TimeInput(
-                label: "Pace (min/\(paceUnit))",
+                label: "Pace per \(distanceUnit)",
                 totalSeconds: $paceSeconds
             )
-            Divider()
             Label(
-                "Distance is \(distance.places(2)) \(paceUnit)s.",
+                "\(distance.places(2)) \(distanceUnit)s",
                 bold: true
             )
                 .foregroundColor(.yellow)
         }
+        .padding(.top, topPadding + 11)
     }
 }
 

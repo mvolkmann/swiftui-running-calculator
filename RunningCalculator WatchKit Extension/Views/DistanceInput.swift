@@ -12,6 +12,7 @@ struct DistanceInput: View {
                 }
             }
             .labelsHidden()
+            .frame(height: pickerHeight)
         }
     }
 }

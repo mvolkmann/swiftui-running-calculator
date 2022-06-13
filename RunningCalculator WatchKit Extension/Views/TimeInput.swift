@@ -42,6 +42,7 @@ struct TimeInput: View {
                         }
                     }
                     .onChange(of: hours) { value in updateTotalSeconds() }
+                    .frame(height: pickerHeight)
                 }
             }
 
@@ -53,6 +54,7 @@ struct TimeInput: View {
                     }
                 }
                 .onChange(of: minutes) { value in updateTotalSeconds() }
+                .frame(height: pickerHeight)
             }
 
             VStack {
@@ -63,6 +65,7 @@ struct TimeInput: View {
                     }
                 }
                 .onChange(of: seconds) { value in updateTotalSeconds() }
+                .frame(height: pickerHeight)
             }
         }
         .labelsHidden() // hides Picker labels

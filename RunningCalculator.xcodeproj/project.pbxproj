@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1806FE2856ADC600CDFB30 /* CustomDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1806FD2856ADC600CDFB30 /* CustomDistance.swift */; };
+		1A1807002856B02300CDFB30 /* UnitInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1806FF2856B02300CDFB30 /* UnitInput.swift */; };
 		1A44E3122853EBAB003692B6 /* RunCalc.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1A44E3112853EBAB003692B6 /* RunCalc.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1A44E3172853EBAC003692B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A44E3162853EBAC003692B6 /* Assets.xcassets */; };
 		1A44E31D2853EBAC003692B6 /* RunningCalculator WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1A44E31C2853EBAC003692B6 /* RunningCalculator WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -73,6 +75,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A1806FD2856ADC600CDFB30 /* CustomDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDistance.swift; sourceTree = "<group>"; };
+		1A1806FF2856B02300CDFB30 /* UnitInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitInput.swift; sourceTree = "<group>"; };
 		1A44E30D2853EBAB003692B6 /* RunCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A44E3112853EBAB003692B6 /* RunCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A44E3162853EBAC003692B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				1A44E3232853EBAC003692B6 /* ContentView.swift */,
+				1A1806FD2856ADC600CDFB30 /* CustomDistance.swift */,
 				1A44E3492855469F003692B6 /* DistanceInput.swift */,
 				1A44E3422853F1FD003692B6 /* DistanceView.swift */,
 				1A44E3572856472D003692B6 /* Label.swift */,
@@ -175,6 +180,7 @@
 				1A44E35228563B3F003692B6 /* SettingsView.swift */,
 				1A44E34B285549D7003692B6 /* TimeInput.swift */,
 				1A44E3442853F207003692B6 /* TimeView.swift */,
+				1A1806FF2856B02300CDFB30 /* UnitInput.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				1A44E3432853F1FD003692B6 /* DistanceView.swift in Sources */,
 				1A44E3512856389C003692B6 /* Distance.swift in Sources */,
 				1A44E34C285549D7003692B6 /* TimeInput.swift in Sources */,
+				1A1807002856B02300CDFB30 /* UnitInput.swift in Sources */,
 				1A44E3582856472D003692B6 /* Label.swift in Sources */,
 				1A44E3472853F8FD003692B6 /* DoubleExtension.swift in Sources */,
 				1A44E35328563B3F003692B6 /* SettingsView.swift in Sources */,
@@ -345,6 +352,7 @@
 				1A44E35628563FB8003692B6 /* ViewModel.swift in Sources */,
 				1A44E3222853EBAC003692B6 /* RunningCalculatorApp.swift in Sources */,
 				1A44E34A2855469F003692B6 /* DistanceInput.swift in Sources */,
+				1A1806FE2856ADC600CDFB30 /* CustomDistance.swift in Sources */,
 				1A44E3282853EBAC003692B6 /* NotificationView.swift in Sources */,
 				1A44E3402853EE12003692B6 /* PaceView.swift in Sources */,
 			);

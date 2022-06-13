@@ -1,19 +1,11 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage("paceUnit") var paceUnit: String = "miles"
+    @AppStorage("distanceUnit") var distanceUnit: String = "mile"
     //@EnvironmentObject var viewModel: ViewModel
 
-    let paceUnits = ["mile", "km"] // minutes per
-
     var body: some View {
-        Text("Pace Units")
-        Picker("Pace Units", selection: $paceUnit) {
-            ForEach(paceUnits, id: \.self) { unit in
-                Text("minutes per \(unit)")
-            }
-        }
-        .labelsHidden()
+        UnitInput(label: "Distance Unit", selection: $distanceUnit)
     }
 }
 

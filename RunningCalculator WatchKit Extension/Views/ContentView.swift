@@ -1,27 +1,28 @@
 import SwiftUI
 
+let pickerHeight: CGFloat = 30
+let topPadding: CGFloat = 20
+
 struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
-                    NavigationLink(destination: SettingsView()) {
-                        Text("Settings").foregroundColor(.gray)
-                    }
                     NavigationLink(destination: PaceView()) {
                         Text("Pace").foregroundColor(.red).fontWeight(.bold)
                     }
-                }
-                HStack {
                     NavigationLink(destination: TimeView()) {
                         Text("Time").foregroundColor(.green).fontWeight(.bold)
                     }
-                    NavigationLink(destination: DistanceView()) {
-                        Text("Distance").foregroundColor(.blue).fontWeight(.bold)
-                    }
+                }
+                NavigationLink(destination: DistanceView()) {
+                    Text("Distance").foregroundColor(.blue).fontWeight(.bold)
+                }
+                NavigationLink(destination: SettingsView()) {
+                    Text("Settings").foregroundColor(.gray)
                 }
             }
-            .font(.system(size: 16))
+            .font(.system(size: 18))
         }
     }
 }
