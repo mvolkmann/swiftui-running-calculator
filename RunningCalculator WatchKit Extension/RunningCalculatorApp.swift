@@ -7,7 +7,7 @@ struct RunningCalculatorApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                Splash()
             }
             .environmentObject(viewModel)
         }
