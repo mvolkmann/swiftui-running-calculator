@@ -4,10 +4,8 @@ struct DistanceView: View {
     @AppStorage("distanceUnit") var distanceUnit: String = "mile"
     @AppStorage("paceSeconds") var paceSeconds: Int = 6 * 60 + 45
     @AppStorage("totalSeconds") var totalSeconds: Int = (2 * 60 + 57) * 60 + 11
-    //@EnvironmentObject var viewModel: ViewModel
 
     var distance: Double {
-        //viewModel.paceSeconds == 0 ?
         paceSeconds == 0 ?
             0 :
             Double(totalSeconds) / Double(paceSeconds)

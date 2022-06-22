@@ -4,7 +4,6 @@ struct TimeView: View {
     @AppStorage("distanceKey") var distanceKey: String = "Marathon"
     @AppStorage("distanceUnit") var distanceUnit: String = "mile"
     @AppStorage("paceSeconds") var paceSeconds: Int = 6 * 60 + 45
-    //@EnvironmentObject var viewModel: ViewModel
 
     private var time: String {
         let d = Distance(key: distanceKey)

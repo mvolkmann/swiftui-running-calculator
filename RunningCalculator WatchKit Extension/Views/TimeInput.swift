@@ -77,21 +77,21 @@ struct TimeInput: View {
     }
 }
 
-struct TimeInputDemo: View {
-    var includeHours: Bool = false
-    @State var totalSeconds = 0
+struct TimeInput_Previews: PreviewProvider {
+    struct Preview: View {
+        var includeHours: Bool = false
+        @State var totalSeconds = 0
 
-    var body: some View {
-        VStack {
-            TimeInput(includeHours: includeHours, totalSeconds: $totalSeconds)
-            Text("seconds = \(totalSeconds)")
+        var body: some View {
+            VStack {
+                TimeInput(includeHours: includeHours, totalSeconds: $totalSeconds)
+                Text("seconds = \(totalSeconds)")
+            }
         }
     }
-}
 
-struct TimeInput_Previews: PreviewProvider {
     static var previews: some View {
-        TimeInputDemo()
-        TimeInputDemo(includeHours: true)
+        Preview()
+        Preview(includeHours: true)
     }
 }

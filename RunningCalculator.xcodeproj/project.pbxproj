@@ -28,7 +28,6 @@
 		1A44E34F2856357B003692B6 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44E34E2856357B003692B6 /* Time.swift */; };
 		1A44E3512856389C003692B6 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44E3502856389C003692B6 /* Distance.swift */; };
 		1A44E35328563B3F003692B6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44E35228563B3F003692B6 /* SettingsView.swift */; };
-		1A44E35628563FB8003692B6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44E35528563FB8003692B6 /* ViewModel.swift */; };
 		1A44E3582856472D003692B6 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44E3572856472D003692B6 /* Label.swift */; };
 		1A5CEF272858044C006A68CE /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CEF262858044C006A68CE /* Splash.swift */; };
 /* End PBXBuildFile section */
@@ -100,7 +99,6 @@
 		1A44E34E2856357B003692B6 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		1A44E3502856389C003692B6 /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
 		1A44E35228563B3F003692B6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		1A44E35528563FB8003692B6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		1A44E3572856472D003692B6 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		1A5CEF262858044C006A68CE /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,7 +152,6 @@
 				1A44E3272853EBAC003692B6 /* NotificationView.swift */,
 				1A44E3312853EBAD003692B6 /* PushNotificationPayload.apns */,
 				1A44E34D2856356A003692B6 /* Models */,
-				1A44E35428563FA9003692B6 /* ViewModels */,
 				1A44E3412853F1C2003692B6 /* Views */,
 				1A44E3482853F909003692B6 /* Extensions */,
 				1A44E32D2853EBAD003692B6 /* Preview Content */,
@@ -173,14 +170,14 @@
 		1A44E3412853F1C2003692B6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1A44E3232853EBAC003692B6 /* Main.swift */,
-				1A5CEF262858044C006A68CE /* Splash.swift */,
 				1A1806FD2856ADC600CDFB30 /* CustomDistance.swift */,
 				1A44E3492855469F003692B6 /* DistanceInput.swift */,
 				1A44E3422853F1FD003692B6 /* DistanceView.swift */,
 				1A44E3572856472D003692B6 /* Label.swift */,
+				1A44E3232853EBAC003692B6 /* Main.swift */,
 				1A44E33F2853EE12003692B6 /* PaceView.swift */,
 				1A44E35228563B3F003692B6 /* SettingsView.swift */,
+				1A5CEF262858044C006A68CE /* Splash.swift */,
 				1A44E34B285549D7003692B6 /* TimeInput.swift */,
 				1A44E3442853F207003692B6 /* TimeView.swift */,
 				1A1806FF2856B02300CDFB30 /* UnitInput.swift */,
@@ -203,14 +200,6 @@
 				1A44E34E2856357B003692B6 /* Time.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		1A44E35428563FA9003692B6 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				1A44E35528563FB8003692B6 /* ViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,7 +342,6 @@
 				1A44E35328563B3F003692B6 /* SettingsView.swift in Sources */,
 				1A44E3452853F207003692B6 /* TimeView.swift in Sources */,
 				1A44E32A2853EBAC003692B6 /* ComplicationController.swift in Sources */,
-				1A44E35628563FB8003692B6 /* ViewModel.swift in Sources */,
 				1A44E3222853EBAC003692B6 /* RunningCalculatorApp.swift in Sources */,
 				1A44E34A2855469F003692B6 /* DistanceInput.swift in Sources */,
 				1A1806FE2856ADC600CDFB30 /* CustomDistance.swift in Sources */,

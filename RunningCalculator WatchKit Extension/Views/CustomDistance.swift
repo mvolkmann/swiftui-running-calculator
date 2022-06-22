@@ -1,9 +1,15 @@
 import SwiftUI
 
 struct CustomDistance: View {
+    @AppStorage("customDistance") var customDistance: String = ""
+    @AppStorage("customUnit") var customUnit: String = "km"
+
     var body: some View {
-        //Picker
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            UnitInput(label: "Distance Unit", selection: $customUnit)
+            TextField("Distance", text: $customDistance)
+            Text("Your custom distance is \(customDistance) \(customUnit)s")
+        }
     }
 }
 
