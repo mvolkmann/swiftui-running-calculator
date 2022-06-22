@@ -6,7 +6,8 @@ struct Splash: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text(instructions).font(.system(size: 14))
+                Text(instructions)
+                    .font(.system(size: 14))
                 NavigationLink("Go! 🏃‍♀️🏃🏾🏃‍♂️") {
                     MainView()
                 }

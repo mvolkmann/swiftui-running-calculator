@@ -84,7 +84,10 @@ struct TimeInput_Previews: PreviewProvider {
 
         var body: some View {
             VStack {
-                TimeInput(includeHours: includeHours, totalSeconds: $totalSeconds)
+                TimeInput(
+                    includeHours: includeHours,
+                    totalSeconds: $totalSeconds
+                )
                 Text("seconds = \(totalSeconds)")
             }
         }
