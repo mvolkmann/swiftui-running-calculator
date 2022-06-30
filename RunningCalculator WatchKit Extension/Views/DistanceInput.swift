@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct DistanceInput: View {
-    var distanceKey: Binding<String>
+    @Binding var distanceKey: String
 
     var body: some View {
         VStack {
             Label("Distance", bold: true)
-            Picker("Distance", selection: distanceKey) {
+            Picker("Distance", selection: $distanceKey) {
                 ForEach(Array(Distance.keys), id: \.self) { value in
                     Text(value)
                 }

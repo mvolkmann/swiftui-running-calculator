@@ -2,14 +2,14 @@ import SwiftUI
 
 struct UnitInput: View {
     var label: String
-    var selection: Binding<String>
+    @Binding var selection: String
 
     let units = ["mile", "km"]
 
     var body: some View {
         VStack {
             Text(label)
-            Picker(label, selection: selection) {
+            Picker(label, selection: $selection) {
                 ForEach(units, id: \.self) { unit in
                     Text(unit)
                 }
@@ -27,7 +27,7 @@ struct UnitInput_Previews: PreviewProvider {
         var body: some View {
             VStack {
                 UnitInput(label: "Pace Unit", selection: $unit)
-                Text("You selected \(unit)")
+                Text("You selected \(unit).")
             }
         }
     }

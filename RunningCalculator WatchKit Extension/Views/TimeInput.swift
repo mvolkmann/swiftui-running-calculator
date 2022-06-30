@@ -3,11 +3,11 @@ import SwiftUI
 struct TimeInput: View {
     var label: String
     var includeHours: Bool
-    var totalSeconds: Binding<Int>
+    @Binding var totalSeconds: Int
 
-    @State var hours = 0
-    @State var minutes = 0
-    @State var seconds = 0
+    @State private var hours = 0
+    @State private var minutes = 0
+    @State private var seconds = 0
 
     let hourValues = [Int](0...8)
     let minuteValues = [Int](0..<60)
@@ -20,7 +20,7 @@ struct TimeInput: View {
     ) {
         self.label = label
         self.includeHours = includeHours
-        self.totalSeconds = totalSeconds
+        self._totalSeconds = totalSeconds // note the underscore!
 
         let time = Time(totalSeconds: totalSeconds.wrappedValue)
 
@@ -72,8 +72,7 @@ struct TimeInput: View {
     }
 
     func updateTotalSeconds() {
-        totalSeconds.wrappedValue =
-          ((hours * 60) + minutes) * 60 + seconds
+        totalSeconds = ((hours * 60) + minutes) * 60 + seconds
     }
 }
 

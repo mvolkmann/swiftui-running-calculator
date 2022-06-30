@@ -30,6 +30,7 @@
 		1A44E35328563B3F003692B6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44E35228563B3F003692B6 /* SettingsView.swift */; };
 		1A44E3582856472D003692B6 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44E3572856472D003692B6 /* Label.swift */; };
 		1A5CEF272858044C006A68CE /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CEF262858044C006A68CE /* Splash.swift */; };
+		1AFC4601286D287D00AAC5D0 /* NumberPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC4600286D287D00AAC5D0 /* NumberPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		1A44E35228563B3F003692B6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1A44E3572856472D003692B6 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		1A5CEF262858044C006A68CE /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		1AFC4600286D287D00AAC5D0 /* NumberPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				1A1806FD2856ADC600CDFB30 /* CustomDistance.swift */,
+				1AFC4600286D287D00AAC5D0 /* NumberPicker.swift */,
 				1A44E3492855469F003692B6 /* DistanceInput.swift */,
 				1A44E3422853F1FD003692B6 /* DistanceView.swift */,
 				1A44E3572856472D003692B6 /* Label.swift */,
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A44E34F2856357B003692B6 /* Time.swift in Sources */,
+				1AFC4601286D287D00AAC5D0 /* NumberPicker.swift in Sources */,
 				1A44E3262853EBAC003692B6 /* NotificationController.swift in Sources */,
 				1A44E3242853EBAC003692B6 /* Main.swift in Sources */,
 				1A44E3432853F1FD003692B6 /* DistanceView.swift in Sources */,
