@@ -1,12 +1,10 @@
 import SwiftUI
 
 struct NumberPicker: View {
-    typealias OnChange = (Int) -> Void
-
     var label: String
     var min: Int = 0
     var max: Int = 10
-    var onChange: OnChange = {_ in }
+    var onChange: (Int) -> Void = {_ in }
     @Binding var selection: Int
 
     var body: some View {

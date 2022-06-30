@@ -3,16 +3,27 @@ import SwiftUI
 struct DistanceInput: View {
     @Binding var distanceKey: String
 
+    @State private var showCustom = false
+
     var body: some View {
-        VStack {
-            Label("Distance", bold: true)
-            Picker("Distance", selection: $distanceKey) {
-                ForEach(Array(Distance.keys), id: \.self) { value in
-                    Text(value)
-                }
+        ZStack {
+            LogicLink(isActive: $showCustom) {
+                CustomDistance()
             }
-            .labelsHidden()
-            .frame(height: pickerHeight)
+            VStack {
+                Label("Distance", bold: true)
+                Picker("Distance", selection: $distanceKey) {
+                    ForEach(Array(Distance.keys), id: \.self) { value in
+                        Text(value)
+                    }
+                }
+                .onChange(of: distanceKey) { _ in
+                    print("distanceKey = \(distanceKey)")
+                    showCustom = distanceKey == "Custom"
+                }
+                .labelsHidden()
+                .frame(height: pickerHeight)
+            }
         }
     }
 }
