@@ -34,39 +34,25 @@ struct TimeInput: View {
         if !label.isEmpty { Label(label, bold: true) }
         HStack {
             if includeHours {
-                VStack {
-                    Label("Hours")
-                    Picker("Hours", selection: $hours) {
-                        ForEach(hourValues, id: \.self) { value in
-                            Text(String(value))
-                        }
-                    }
-                    .onChange(of: hours) { value in updateTotalSeconds() }
-                    .frame(height: pickerHeight)
-                }
+                NumberPicker(
+                    label: "Hours",
+                    max: 59,
+                    onChange: { _ in updateTotalSeconds() },
+                    selection: $hours
+                )
             }
-
-            VStack {
-                Label("Mins")
-                Picker("Minutes", selection: $minutes) {
-                    ForEach(minuteValues, id: \.self) { value in
-                        Text(String(value))
-                    }
-                }
-                .onChange(of: minutes) { value in updateTotalSeconds() }
-                .frame(height: pickerHeight)
-            }
-
-            VStack {
-                Label("Secs")
-                Picker("Seconds", selection: $seconds) {
-                    ForEach(secondValues, id: \.self) { value in
-                        Text(String(value))
-                    }
-                }
-                .onChange(of: seconds) { value in updateTotalSeconds() }
-                .frame(height: pickerHeight)
-            }
+            NumberPicker(
+                label: "Mins",
+                max: 59,
+                onChange: { _ in updateTotalSeconds() },
+                selection: $minutes
+            )
+            NumberPicker(
+                label: "Secs",
+                max: 59,
+                onChange: { _ in updateTotalSeconds() },
+                selection: $seconds
+            )
         }
         .labelsHidden() // hides Picker labels
     }

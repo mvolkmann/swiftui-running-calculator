@@ -30,13 +30,13 @@ struct NumberPicker_Previews: PreviewProvider {
 
         var body: some View {
             VStack {
-            NumberPicker(
-                label: "Test",
-                min: 1,
-                max: 5,
-                onChange: { value in print("changed to \(value)") },
-                selection: $value
-            )
+                NumberPicker(
+                    label: "Test",
+                    min: 1,
+                    max: 5,
+                    onChange: { value in print("changed to \(value)") },
+                    selection: $value
+                )
                 Text("You selected \(value).")
             }
         }
