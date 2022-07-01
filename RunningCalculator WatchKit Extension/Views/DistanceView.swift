@@ -19,11 +19,11 @@ struct DistanceView: View {
                 totalSeconds: $totalSeconds
             )
             TimeInput(
-                label: "Pace per \(distanceUnit)",
+                label: "Pace per \(distanceUnit.prefix(distanceUnit.count - 1))",
                 totalSeconds: $paceSeconds
             )
             Label(
-                "\(distance.places(2)) \(distanceUnit)s",
+                "\(distance.places(2)) \(distanceUnit)",
                 bold: true
             )
                 .foregroundColor(.yellow)

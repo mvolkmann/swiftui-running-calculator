@@ -8,7 +8,8 @@ struct PaceView: View {
     @AppStorage("isCustom") var isCustom = false
     @AppStorage("totalSeconds") var totalSeconds: Int = (2 * 60 + 57) * 60 + 11
 
-    private var pace: String {
+    // Same computed property is in TimeView.
+    private var distance: Double {
         var distance = 0.0
         if isCustom {
             distance = Double(customDistance)
@@ -23,7 +24,11 @@ struct PaceView: View {
             let d = Distance(key: distanceKey)
             distance = distanceUnit == "miles" ? d.miles : d.kilometers
         }
-        if distance == 0 { return "unknown" }
+        return distance
+    }
+
+    private var pace: String {
+        guard distance > 0 else { return "unknown" }
 
         let paceSeconds = Int((Double(totalSeconds) / distance).rounded())
         let singular = distanceUnit.prefix(distanceUnit.count - 1)
