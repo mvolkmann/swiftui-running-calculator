@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct DistanceView: View {
-    @AppStorage("distanceUnit") var distanceUnit: String = "mile"
+    @AppStorage("distanceUnit") var distanceUnit: String = "miles"
     @AppStorage("paceSeconds") var paceSeconds: Int = 6 * 60 + 45
     @AppStorage("totalSeconds") var totalSeconds: Int = (2 * 60 + 57) * 60 + 11
 

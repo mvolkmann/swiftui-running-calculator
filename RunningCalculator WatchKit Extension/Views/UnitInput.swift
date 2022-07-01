@@ -1,15 +1,15 @@
 import SwiftUI
 
 struct UnitInput: View {
-    var label: String
+    var label: String?
     @Binding var selection: String
 
-    let units = ["mile", "km"]
+    let units = ["kms", "miles"]
 
     var body: some View {
         VStack {
-            Text(label)
-            Picker(label, selection: $selection) {
+            if let label = label { Text(label) }
+            Picker("", selection: $selection) {
                 ForEach(units, id: \.self) { unit in
                     Text(unit)
                 }

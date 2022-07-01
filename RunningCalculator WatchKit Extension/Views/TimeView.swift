@@ -2,12 +2,12 @@ import SwiftUI
 
 struct TimeView: View {
     @AppStorage("distanceKey") var distanceKey: String = "Marathon"
-    @AppStorage("distanceUnit") var distanceUnit: String = "mile"
+    @AppStorage("distanceUnit") var distanceUnit: String = "miles"
     @AppStorage("paceSeconds") var paceSeconds: Int = 6 * 60 + 45
 
     private var time: String {
         let d = Distance(key: distanceKey)
-        let distance = distanceUnit == "mile" ? d.miles : d.kilometers
+        let distance = distanceUnit == "miles" ? d.miles : d.kilometers
         let totalSeconds = Int((distance * Double(paceSeconds)).rounded())
         return Time(totalSeconds: totalSeconds, includeHours: true).string
     }

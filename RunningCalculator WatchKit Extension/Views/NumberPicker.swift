@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct NumberPicker: View {
-    var label: String
+    var label: String?
     var min: Int = 0
     var max: Int = 10
     var onChange: (Int) -> Void = {_ in }
@@ -9,8 +9,10 @@ struct NumberPicker: View {
 
     var body: some View {
         VStack {
-            Label(label, bold: true)
-            Picker(label, selection: $selection) {
+            if let label = label {
+                Label(label, bold: true)
+            }
+            Picker("", selection: $selection) {
                 ForEach(min...max, id: \.self) { value in
                     Text("\(value)")
                 }
@@ -32,7 +34,6 @@ struct NumberPicker_Previews: PreviewProvider {
                     label: "Test",
                     min: 1,
                     max: 5,
-                    onChange: { value in print("changed to \(value)") },
                     selection: $value
                 )
                 Text("You selected \(value).")
