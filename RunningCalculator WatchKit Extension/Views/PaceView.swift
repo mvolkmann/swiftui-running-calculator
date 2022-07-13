@@ -2,9 +2,9 @@ import SwiftUI
 
 struct PaceView: View {
     @AppStorage("customDistance") var customDistance: Int = 1
-    @AppStorage("customUnit") var customUnit: String = "kms"
+    @AppStorage("customUnit") var customUnit: String = "km"
     @AppStorage("distanceKey") var distanceKey: String = "Marathon"
-    @AppStorage("distanceUnit") var distanceUnit: String = "miles"
+    @AppStorage("distanceUnit") var distanceUnit: String = "mile"
     @AppStorage("isCustom") var isCustom = false
     @AppStorage("totalSeconds") var totalSeconds: Int = (2 * 60 + 57) * 60 + 11
 
@@ -14,7 +14,7 @@ struct PaceView: View {
         if isCustom {
             distance = Double(customDistance)
             if customUnit != distanceUnit {
-                if distanceUnit == "miles" {
+                if distanceUnit == "mile" {
                     distance *= Distance.milesPerKm
                 } else {
                     distance *= Distance.kmsPerMile
@@ -22,7 +22,7 @@ struct PaceView: View {
             }
         } else {
             let d = Distance(key: distanceKey)
-            distance = distanceUnit == "miles" ? d.miles : d.kilometers
+            distance = distanceUnit == "mile" ? d.miles : d.kilometers
         }
         return distance
     }
@@ -31,8 +31,7 @@ struct PaceView: View {
         guard distance > 0 else { return "unknown" }
 
         let paceSeconds = Int((Double(totalSeconds) / distance).rounded())
-        let singular = distanceUnit.prefix(distanceUnit.count - 1)
-        return Time(totalSeconds: paceSeconds).string + "/\(singular)"
+        return Time(totalSeconds: paceSeconds).string + "/\(distanceUnit)"
     }
 
     var body: some View {

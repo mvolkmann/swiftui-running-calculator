@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage("distanceUnit") var distanceUnit: String = "miles"
+    @AppStorage("distanceUnit") var distanceUnit: String = "mile"
 
     var body: some View {
         UnitInput(label: "Distance Unit", selection: $distanceUnit)

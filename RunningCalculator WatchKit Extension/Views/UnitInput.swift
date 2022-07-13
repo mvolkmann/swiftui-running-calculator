@@ -4,7 +4,7 @@ struct UnitInput: View {
     var label: String?
     @Binding var selection: String
 
-    let units = ["kms", "miles"]
+    let units = ["km", "mile"]
 
     var body: some View {
         VStack {
@@ -22,7 +22,7 @@ struct UnitInput: View {
 
 struct UnitInput_Previews: PreviewProvider {
     struct Preview: View {
-        @State var unit = "miles"
+        @State var unit = "mile"
 
         var body: some View {
             VStack {

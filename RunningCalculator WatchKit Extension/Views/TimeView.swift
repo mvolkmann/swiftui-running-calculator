@@ -2,9 +2,9 @@ import SwiftUI
 
 struct TimeView: View {
     @AppStorage("customDistance") var customDistance: Int = 1
-    @AppStorage("customUnit") var customUnit: String = "kms"
+    @AppStorage("customUnit") var customUnit: String = "km"
     @AppStorage("distanceKey") var distanceKey: String = "Marathon"
-    @AppStorage("distanceUnit") var distanceUnit: String = "miles"
+    @AppStorage("distanceUnit") var distanceUnit: String = "mile"
     @AppStorage("isCustom") var isCustom = false
     @AppStorage("paceSeconds") var paceSeconds: Int = 6 * 60 + 45
 
@@ -14,7 +14,7 @@ struct TimeView: View {
         if isCustom {
             distance = Double(customDistance)
             if customUnit != distanceUnit {
-                if distanceUnit == "miles" {
+                if distanceUnit == "mile" {
                     distance *= Distance.milesPerKm
                 } else {
                     distance *= Distance.kmsPerMile
@@ -22,7 +22,7 @@ struct TimeView: View {
             }
         } else {
             let d = Distance(key: distanceKey)
-            distance = distanceUnit == "miles" ? d.miles : d.kilometers
+            distance = distanceUnit == "mile" ? d.miles : d.kilometers
         }
         return distance
     }
@@ -38,7 +38,7 @@ struct TimeView: View {
         VStack {
             DistanceInput(distanceKey: $distanceKey)
             TimeInput(
-                label: "Pace per \(distanceUnit.prefix(distanceUnit.count - 1))",
+                label: "Pace per \(distanceUnit)",
                 totalSeconds: $paceSeconds
             )
             Label("Time: \(time)", bold: true)

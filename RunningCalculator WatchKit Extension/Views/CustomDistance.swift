@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CustomDistance: View {
     @AppStorage("customDistance") var customDistance: Int = 1
-    @AppStorage("customUnit") var customUnit: String = "kms"
+    @AppStorage("customUnit") var customUnit: String = "km"
 
     var body: some View {
         HStack {

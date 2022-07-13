@@ -8,6 +8,7 @@ let topPadding: CGFloat = 20
 struct MainView: View {
     var body: some View {
         VStack {
+            Text("Calculate what?")
             HStack {
                 NavigationLink(destination: PaceView()) {
                     Text("Pace").foregroundColor(.red).fontWeight(.bold)
