@@ -7,13 +7,13 @@ struct CustomDistance: View {
     var body: some View {
         HStack {
             NumberPicker(
-                //label: "Distance",
+                // label: "Distance",
                 min: 1,
                 max: 100,
                 selection: $customDistance
             )
             UnitInput(
-                //label: "Unit",
+                // label: "Unit",
                 selection: $customUnit
             )
         }

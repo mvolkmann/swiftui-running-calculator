@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct Splash: View {
-    let instructions = "Tap the button for the value to calculate (pace, time, or distance) and enter the other two values."
+    let instructions = "Tap the button for the value to calculate " +
+        "(pace, time, or distance) and enter the other two values."
 
     var body: some View {
         NavigationView {

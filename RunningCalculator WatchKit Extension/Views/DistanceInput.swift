@@ -13,7 +13,7 @@ struct DistanceInput: View {
                     Toggle("", isOn: $isCustom).labelsHidden()
                     Text("Custom").onTapGesture { isCustom = true }
                 }
-                //Label("Distance", bold: true)
+                // Label("Distance", bold: true)
                 if isCustom {
                     CustomDistance()
                 } else {

@@ -21,8 +21,8 @@ struct PaceView: View {
                 }
             }
         } else {
-            let d = Distance(key: distanceKey)
-            distance = distanceUnit == "mile" ? d.miles : d.kilometers
+            let dist = Distance(key: distanceKey)
+            distance = distanceUnit == "mile" ? dist.miles : dist.kilometers
         }
         return distance
     }
