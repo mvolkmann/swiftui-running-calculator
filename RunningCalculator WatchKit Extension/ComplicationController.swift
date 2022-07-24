@@ -18,7 +18,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 identifier: "complication",
                 displayName: "RunningCalculator",
                 supportedFamilies: CLKComplicationFamily.allCases
-            ),
+            )
             // Multiple complication support can be added here with more descriptors
         ]
 

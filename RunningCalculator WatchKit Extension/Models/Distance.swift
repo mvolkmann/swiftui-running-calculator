@@ -13,7 +13,7 @@ struct Distance {
         "Marathon": 26.2188,
         "50K": 50 * milesPerKm,
         "50 Miles": 50,
-        "100 Miles": 50,
+        "100 Miles": 50
     ]
 
     var key: String
@@ -21,7 +21,7 @@ struct Distance {
     // These are in the order in which they should appear in a Picker.
     static let keys = [
         "1 Mile", "5K", "10K", "Half Marathon", "Marathon",
-        "50K", "50 Miles", "100 Miles",
+        "50K", "50 Miles", "100 Miles"
     ]
 
     var kilometers: Double { miles * Distance.kmsPerMile }
