@@ -9,9 +9,9 @@ struct TimeInput: View {
     @State private var minutes = 0
     @State private var seconds = 0
 
-    let hourValues = [Int](0...8)
-    let minuteValues = [Int](0..<60)
-    let secondValues = [Int](0..<60)
+    let hourValues = [Int](0 ... 8)
+    let minuteValues = [Int](0 ..< 60)
+    let secondValues = [Int](0 ..< 60)
 
     init(
         label: String = "",
@@ -20,7 +20,7 @@ struct TimeInput: View {
     ) {
         self.label = label
         self.includeHours = includeHours
-        self._totalSeconds = totalSeconds // note the underscore!
+        _totalSeconds = totalSeconds // note the underscore!
 
         let time = Time(totalSeconds: totalSeconds.wrappedValue)
 

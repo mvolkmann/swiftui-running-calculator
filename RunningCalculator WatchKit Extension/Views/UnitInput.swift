@@ -31,6 +31,7 @@ struct UnitInput_Previews: PreviewProvider {
             }
         }
     }
+
     static var previews: some View {
         Preview()
     }

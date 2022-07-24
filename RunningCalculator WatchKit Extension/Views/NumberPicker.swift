@@ -4,7 +4,7 @@ struct NumberPicker: View {
     var label: String?
     var min: Int = 0
     var max: Int = 10
-    var onChange: (Int) -> Void = {_ in }
+    var onChange: (Int) -> Void = { _ in }
     @Binding var selection: Int
 
     var body: some View {
@@ -13,7 +13,7 @@ struct NumberPicker: View {
                 Label(label, bold: true)
             }
             Picker("", selection: $selection) {
-                ForEach(min...max, id: \.self) { value in
+                ForEach(min ... max, id: \.self) { value in
                     Text("\(value)")
                 }
             }

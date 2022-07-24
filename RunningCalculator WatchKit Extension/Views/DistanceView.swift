@@ -26,7 +26,7 @@ struct DistanceView: View {
                 "\(distance.places(2)) \(distanceUnit)",
                 bold: true
             )
-                .foregroundColor(.yellow)
+            .foregroundColor(.yellow)
         }
         .padding(.top, topPadding + 11)
     }

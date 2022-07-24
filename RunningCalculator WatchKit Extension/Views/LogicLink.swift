@@ -16,6 +16,5 @@ struct LogicLink<Content: View>: View {
                 .background(.clear)
                 .frame(maxWidth: 0, maxHeight: 0)
         }
-
     }
 }

@@ -8,7 +8,6 @@
 import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
-
     // MARK: - Complication Configuration
 
     func getComplicationDescriptors(
@@ -19,7 +18,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 identifier: "complication",
                 displayName: "RunningCalculator",
                 supportedFamilies: CLKComplicationFamily.allCases
-            )
+            ),
             // Multiple complication support can be added here with more descriptors
         ]
 
@@ -28,7 +27,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
 
     func handleSharedComplicationDescriptors(
-        _ complicationDescriptors: [CLKComplicationDescriptor]
+        _: [CLKComplicationDescriptor]
     ) {
         // Do any necessary work to support these newly shared complication descriptors
     }
@@ -36,7 +35,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Configuration
 
     func getTimelineEndDate(
-        for complication: CLKComplication,
+        for _: CLKComplication,
         withHandler handler: @escaping (Date?) -> Void
     ) {
         // Call the handler with the last entry date you can currently provide
@@ -45,7 +44,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
 
     func getPrivacyBehavior(
-        for complication: CLKComplication,
+        for _: CLKComplication,
         withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void
     ) {
         // Call the handler with your desired behavior when the device is locked
@@ -55,7 +54,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
 
     func getCurrentTimelineEntry(
-        for complication: CLKComplication,
+        for _: CLKComplication,
         withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void
     ) {
         // Call the handler with the current timeline entry
@@ -63,8 +62,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
 
     func getTimelineEntries(
-        for complication: CLKComplication,
-        after date: Date, limit: Int,
+        for _: CLKComplication,
+        after _: Date, limit _: Int,
         withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void
     ) {
         // Call the handler with the timeline entries after the given date
@@ -74,7 +73,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Sample Templates
 
     func getLocalizableSampleTemplate(
-        for complication: CLKComplication,
+        for _: CLKComplication,
         withHandler handler: @escaping (CLKComplicationTemplate?) -> Void
     ) {
         // This method will be called once per supported complication,
